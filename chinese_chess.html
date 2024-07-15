@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="象棋.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <title>chinese chess</title>
+    <style>
+        * {
+            margin: 0px;
+            border: 0px;
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: DFKai-sb, sans-serif;
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .setc-text {
+            writing-mode: vertical-lr;
+            font-size: 36px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .board {
+            width: 640px;
+            height: 720px;
+            border: 1px solid #000;
+            padding: 40px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        /* 80*80 */
+
+        tr {
+            width: 640px;
+            height: 80px;
+            border: 1px solid #000;
+        }
+
+        td {
+            width: 80px;
+            border: 1px solid #000;
+        }
+
+        .line-l {
+            width: 80px;
+            height: 40px;
+            background: linear-gradient(45deg, transparent 49.2%, black 49.2%, black 50.2%, transparent 50.2%);
+        }
+
+        .line-r {
+            width: 80px;
+            height: 40px;
+            background: linear-gradient(-45deg, transparent 49.2%, black 49.2%, black 50.2%, transparent 50.2%);
+        }
+
+        .content1 {
+            position: absolute;
+            display: flex;
+            width: 690px;
+            justify-content: space-between;
+            margin-top: -25px;
+        }
+
+        .black-chess {
+            z-index: 1;
+            background: #fff;
+            font-size: 32px;
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .red-chess {
+            z-index: 1;
+            background: #fff;
+            font-size: 32px;
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            color: #f00;
+        }
+
+        .content2 {
+            position: absolute;
+            display: flex;
+            width: 530px;
+            justify-content: space-between;
+            margin-top: 135px;
+        }
+
+        .content3 {
+            position: absolute;
+            display: flex;
+            width: 690px;
+            justify-content: space-between;
+            margin-top: 215px;
+        }
+
+        .content4 {
+            position: absolute;
+            display: flex;
+            width: 690px;
+            justify-content: space-between;
+            margin-top: 450px;
+        }
+
+        .content5 {
+            position: absolute;
+            display: flex;
+            width: 530px;
+            justify-content: space-between;
+            margin-top: 530px;
+        }
+
+        .content6 {
+            position: absolute;
+            display: flex;
+            width: 690px;
+            justify-content: space-between;
+            margin-top: 695px;
+        }
+
+
+        .center-area-text {
+            text-align: center;
+            font-size: 50px;
+            border: 0px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p class="setc-text">棋盤裡，車無輪，馬無韁，叫聲將軍提防提防</p>
+
+        <div class="board">
+            <div class="content1">
+                <div class="black-chess">車</div>
+                <div class="black-chess">馬</div>
+                <div class="black-chess">象</div>
+                <div class="black-chess">士</div>
+                <div class="black-chess">將</div>
+                <div class="black-chess">士</div>
+                <div class="black-chess">象</div>
+                <div class="black-chess">馬</div>
+                <div class="black-chess">車</div>
+            </div>
+
+            <div class="content2">
+                <div class="black-chess">包</div>
+                <div class="black-chess">包</div>
+            </div>
+
+            <div class="content3">
+                <div class="black-chess">卒</div>
+                <div class="black-chess">卒</div>
+                <div class="black-chess">卒</div>
+                <div class="black-chess">卒</div>
+                <div class="black-chess">卒</div>
+            </div>
+
+            <div class="content4">
+                <div class="red-chess">兵</div>
+                <div class="red-chess">兵</div>
+                <div class="red-chess">兵</div>
+                <div class="red-chess">兵</div>
+                <div class="red-chess">兵</div>
+            </div>
+
+            <div class="content5">
+                <div class="red-chess">炮</div>
+                <div class="red-chess">炮</div>
+            </div>
+
+            <div class="content6">
+                <div class="red-chess">俥</div>
+                <div class="red-chess">傌</div>
+                <div class="red-chess">相</div>
+                <div class="red-chess">仕</div>
+                <div class="red-chess">帥</div>
+                <div class="red-chess">仕</div>
+                <div class="red-chess">相</div>
+                <div class="red-chess">傌</div>
+                <div class="red-chess">俥</div>
+            </div>
+            <table>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="line-l"></td>
+                    <td class="line-r"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="line-r"></td>
+                    <td class="line-l"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="center-area-text" colspan="4">楚河</td>
+                    <td class="center-area-text" colspan="4">漢界</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="line-l"></td>
+                    <td class="line-r"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="line-r"></td>
+                    <td class="line-l"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <p class="setc-text">圖畫裡，龍不吟，虎不嘯，小小書僮可笑可笑</p>
+
+
+
+    </div>
+</body>
+
+</html>
